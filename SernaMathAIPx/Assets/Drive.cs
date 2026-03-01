@@ -15,6 +15,13 @@ public class Drive : MonoBehaviour
 
     }
 
+    void CalculateDistance()
+    {
+        float distance = Mathf.Sqrt(Mathf.Pow(fuel.transform.position.x - transform.position.x,2) + Mathf.Pow(fuel.transform.position.z - transform.position.z, 2));
+
+        Debug.Log("Distance: " + distance);
+    }
+
     void Update()
     {
         // Get the horizontal and vertical axis.
@@ -36,7 +43,7 @@ public class Drive : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-
+            CalculateDistance();
         }
 
     }
